@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UBTokenBar_Example' do
+  pod 'UBTokenBar', :path => '../'
+
+  target 'UBTokenBar_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
