@@ -1,0 +1,6 @@
+framework module UBTokenBar {
+  umbrella header "UBTokenBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

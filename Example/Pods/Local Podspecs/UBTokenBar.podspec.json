@@ -1,0 +1,25 @@
+{
+  "name": "UBTokenBar",
+  "version": "0.1.0",
+  "summary": "A short description of UBTokenBar.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Maxwell Elliott/UBTokenBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Maxwell Elliott": "maxwelle@uber.com"
+  },
+  "source": {
+    "git": "https://github.com/Maxwell Elliott/UBTokenBar.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "UBTokenBar/Classes/**/*",
+  "resources": "UBTokenBar/Assets/*.png",
+  "public_header_files": "Pod/Classes/**/*.h",
+  "frameworks": "UIKit"
+}

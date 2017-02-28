@@ -13,7 +13,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* UBTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* UBTokenTests.swift */; };
+		CFE4D9911E64AEA6007B113C /* UBTokenBarSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE4D9901E64AEA6007B113C /* UBTokenBarSnapshotTests.swift */; };
 		E45AD24107FDD1385CBDA61C /* Pods_UBTokenBar_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF4A806BAD62D3FA0313513 /* Pods_UBTokenBar_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +31,7 @@
 /* Begin PBXFileReference section */
 		2A7575443E0D03088DEDA467 /* Pods-UBTokenBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBTokenBar_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UBTokenBar_Tests/Pods-UBTokenBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2DF4A806BAD62D3FA0313513 /* Pods_UBTokenBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBTokenBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CF982B66DB236AC4E666120 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4CF982B66DB236AC4E666120 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* UBTokenBar_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UBTokenBar_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,12 +41,13 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* UBTokenBar_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UBTokenBar_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* UBTokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBTokenTests.swift; sourceTree = "<group>"; };
 		C26E8095EB6E5613D828B1F6 /* Pods-UBTokenBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBTokenBar_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UBTokenBar_Tests/Pods-UBTokenBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C5FBA570F0B8F28239FD8C97 /* UBTokenBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = UBTokenBar.podspec; path = ../UBTokenBar.podspec; sourceTree = "<group>"; };
+		C5FBA570F0B8F28239FD8C97 /* UBTokenBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UBTokenBar.podspec; path = ../UBTokenBar.podspec; sourceTree = "<group>"; };
+		CFE4D9901E64AEA6007B113C /* UBTokenBarSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBTokenBarSnapshotTests.swift; sourceTree = "<group>"; };
 		E682DE2255B108872BADD15F /* Pods-UBTokenBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBTokenBar_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UBTokenBar_Example/Pods-UBTokenBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F077F51905532778E454C1E1 /* Pods_UBTokenBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBTokenBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAC54691B896B9930E17A7C2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FAC54691B896B9930E17A7C2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FBD0EAE23D9DF19833D3CED5 /* Pods-UBTokenBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBTokenBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UBTokenBar_Example/Pods-UBTokenBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +117,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* UBTokenTests.swift */,
+				CFE4D9901E64AEA6007B113C /* UBTokenBarSnapshotTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -370,7 +373,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* UBTokenTests.swift in Sources */,
+				CFE4D9911E64AEA6007B113C /* UBTokenBarSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UBTokenBar_Example.app/UBTokenBar_Example";
 			};
 			name = Debug;
 		};
@@ -552,6 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UBTokenBar_Example.app/UBTokenBar_Example";
 			};
 			name = Release;
 		};

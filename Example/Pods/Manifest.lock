@@ -1,0 +1,23 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - UBTokenBar (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - UBTokenBar (from `../`)
+
+EXTERNAL SOURCES:
+  UBTokenBar:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  UBTokenBar: 98322c091cdcd9ca3490c5c6d0fb095a7c0f7e45
+
+PODFILE CHECKSUM: 69e170ff6c5328a239394b38f0e40184d0876a08
+
+COCOAPODS: 1.1.1
