@@ -12,14 +12,37 @@ let tokenBarCellReuseIdentifier = "TBTokenBarCellReuseIdentifier"
 let tokenBarTextInputCellReuseIdentifier = "TBTokenBarTextInputCellReuseIdentifier"
 
 open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UBTokenBarTextFieldDelegate, UBTokenBarCollectionViewCellDelegate {
-    private(set) public var collectionViewLayout: UICollectionViewLayout = UBTokenBarCollectionViewFlowLayout()
-    private var collectionViewCellReuseClass: AnyClass = UBTokenBarCollectionViewCell.self
-    private var collectionViewTextInputCellReuseClass: AnyClass = UBTokenBarTextFieldCollectionViewCell.self
-    private(set) public var collectionView: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UBTokenBarCollectionViewFlowLayout())
-    public weak var delegate: UBTokenBarDelegate?
-    private(set) public var tokens: [UBToken] = []
-    weak var tokenBarTextField: UITextField?
+    private var collectionView: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UBTokenBarCollectionViewFlowLayout())
+
+    // Change this to update the collection view layout
+    public var collectionViewLayout: UICollectionViewLayout = UBTokenBarCollectionViewFlowLayout() {
+        didSet {
+            self.collectionView.setCollectionViewLayout(collectionViewLayout, animated: false)
+        }
+    }
+
+    // The collection view cell reuse class for the embedded collection view, change this to register your own custom class to customize the token appearance
+    public var collectionViewCellReuseClass: AnyClass = UBTokenBarCollectionViewCell.self {
+        didSet {
+            self.collectionView.register(collectionViewCellReuseClass, forCellWithReuseIdentifier: tokenBarCellReuseIdentifier)
+        }
+    }
+
+    // The collection view cell reuse class for text input field cell in the embedded collection view, change this to register your own custom class to customize the text field
+    public var collectionViewTextInputCellReuseClass: AnyClass = UBTokenBarTextFieldCollectionViewCell.self {
+        didSet {
+            self.collectionView.register(collectionViewTextInputCellReuseClass, forCellWithReuseIdentifier: tokenBarTextInputCellReuseIdentifier)
+        }
+    }
+
+    // Change this text to customize the UBTokenBar placeholder text
     public var placeholderText: String = "Enter some text and hit return"
+
+    public weak var delegate: UBTokenBarDelegate?
+
+    private(set) public var tokens: [UBToken] = []
+
+    private weak var tokenBarTextField: UITextField?
 
     public init(collectionViewLayout: UICollectionViewLayout = UBTokenBarCollectionViewFlowLayout(), collectionViewCellReuseClass: AnyClass = UBTokenBarRemovableCollectionViewCell.self, collectionViewTextInputCellReuseClass: AnyClass = UBTokenBarTextFieldCollectionViewCell.self, frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
@@ -36,6 +59,11 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         self.collectionView.backgroundColor = UIColor.clear
         self.collectionView.alwaysBounceVertical = true
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        if self.tokenBarIsRTL() {
+            self.collectionView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        }
+
         self.addSubview(self.collectionView)
     }
 
@@ -73,13 +101,13 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         super.touchesBegan(touches, with: event)
     }
 
-    // General public methods
+    /// General public methods
 
     public func contentSize() -> CGSize {
         return self.collectionViewLayout.collectionViewContentSize
     }
 
-    // UICollectionViewDataSource methods
+    /// UICollectionViewDataSource methods
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Add 1 to render the text input field cell
@@ -120,7 +148,7 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         return UICollectionViewCell()
     }
 
-    // UICollectionViewDelegate methods
+    /// UICollectionViewDelegate methods
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
@@ -138,7 +166,7 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
 
     }
 
-    // Token managment methods
+    /// Token managment methods
 
     public func reloadTokenBar() {
         let previousSize = self.contentSize()
@@ -159,11 +187,21 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         }
     }
 
+    /**
+     Call this method to set the tokens of the token bar
+
+     - Parameter tokens: The tokens you wish to set on the token bar
+     */
     public func setTokens(tokens: [UBToken]) {
         self.tokens = tokens
         self.reloadTokenBar()
     }
 
+    /**
+     Call this method to add a token to the token bar
+
+     - Parameter token: The token you wish to add to the UBTokenBar
+     */
     public func addToken(token: UBToken) {
         if let delegate = self.delegate {
             if delegate.shouldAddToken(tokenToAdd: token) {
@@ -180,6 +218,11 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         }
     }
 
+    /**
+     Call this method to remove a token to the token bar
+
+     - Parameter token: The token you wish to remove from the UBTokenBar
+     */
     public func removeToken(token: UBToken) {
         if let delegate = self.delegate {
             if delegate.shouldDeleteToken(tokenToDelete: token) {
@@ -200,20 +243,20 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         }
     }
 
-    func tokenAtIndexPath(indexPath: IndexPath) -> UBToken? {
+    private func tokenAtIndexPath(indexPath: IndexPath) -> UBToken? {
         if indexPath.item < tokens.count {
             return self.tokens[indexPath.item]
         }
         return nil
     }
 
-    // TBTokenBarCollectionViewCellDelegate
+    /// TBTokenBarCollectionViewCellDelegate
 
-    func tokenRemoveButtonTapped(token: UBToken, cell: UBTokenBarCollectionViewCell) {
+    internal func tokenRemoveButtonTapped(token: UBToken, cell: UBTokenBarCollectionViewCell) {
         self.removeToken(token: token)
     }
 
-    // TBTokenBarTextFieldCellDelegate
+    /// TBTokenBarTextFieldCellDelegate
 
     internal func textFieldShouldReturn(textField: UITextField) -> Bool {
         if let currentTextFieldText = textField.text {
@@ -240,7 +283,7 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         self.removeToken(token: lastToken)
         let _ = self.becomeFirstResponder()
     }
-    
+
     internal func textFieldTextDidChange(text: String) {
         self.delegate?.tokenBarTextDidChange(newTokenBarText: text)
     }
