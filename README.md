@@ -18,7 +18,7 @@ If you have any questions, feel free to ask on [Stack Overflow](http://stackover
 
 ## Installation
 
-*UBTokenBar requires iOS 10+*
+**_UBTokenBar requires iOS 10+ and Swift 3_**
 
 #### CocoaPods
 
