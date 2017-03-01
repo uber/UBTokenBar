@@ -16,8 +16,9 @@ If you have any questions, feel free to ask on [Stack Overflow](http://stackover
 - [x] Swift-compatible
 - [x] Full RTL support
 
-
 ## Installation
+
+*UBTokenBar requires iOS 10+*
 
 #### CocoaPods
 
@@ -40,7 +41,7 @@ github "uber/ubtokenbar"
 * Clone the repo `git clone git@github.com:uber/ubtokenbar.git`
 * Open the Example directory `cd UBTokenBar/Example`
 * run `pod install`
-* `open UBTokenBar.xcworkspace` 
+* `open UBTokenBar.xcworkspace`
 * Run the `UBTokenBar-Example` scheme in Xcode. Run the `UBTokenBar_ExampleRTL` to test Right To Left langauge
 
 ## Quickstart
