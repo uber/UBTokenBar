@@ -13,6 +13,7 @@ let defaultTokenBarHeight: CGFloat = 30
 
 class ViewController: UIViewController, UBTokenBarDelegate {
     var tokenBar: UBTokenBar?
+    var tokenBarConstraints: [NSLayoutConstraint]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,9 @@ class ViewController: UIViewController, UBTokenBarDelegate {
         let trailingConstraint = NSLayoutConstraint(item: tokenBar, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: 0)
         let topConstraint = NSLayoutConstraint(item: tokenBar, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 20)
         let heightConstraint = NSLayoutConstraint(item: tokenBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: defaultTokenBarHeight)
-        self.view.addConstraints([leadingConstraint, trailingConstraint, topConstraint, heightConstraint])
+        let tokenBarConstraints = [leadingConstraint, trailingConstraint, topConstraint, heightConstraint]
+        self.view.addConstraints(tokenBarConstraints)
+        self.tokenBarConstraints = tokenBarConstraints
     }
 
     // UBTokenBarDelegate
@@ -49,19 +52,22 @@ class ViewController: UIViewController, UBTokenBarDelegate {
     func tokenBarTextDidChange(newTokenBarText: String) {
     }
 
-
     func tokenBarSizeDidChange(newTokenBarSize: CGSize) {
         guard let tokenBar = self.tokenBar else {
             return
         }
-        self.view.removeConstraints(self.view.constraints)
+
+        if let existingTokenBarConstraints = self.tokenBarConstraints {
+            self.view.removeConstraints(existingTokenBarConstraints)
+        }
 
         let leadingConstraint = NSLayoutConstraint(item: tokenBar, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: 0)
         let trailingConstraint = NSLayoutConstraint(item: tokenBar, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: 0)
         let topConstraint = NSLayoutConstraint(item: tokenBar, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 20)
         let heightConstraint = NSLayoutConstraint(item: tokenBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: newTokenBarSize.height)
 
-        self.view.addConstraints([leadingConstraint, trailingConstraint, topConstraint, heightConstraint])
+        let tokenBarConstraints = [leadingConstraint, trailingConstraint, topConstraint, heightConstraint]
+        self.view.addConstraints(tokenBarConstraints)
+        self.tokenBarConstraints = tokenBarConstraints
     }
 }
-
