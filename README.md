@@ -43,9 +43,23 @@ github "uber/ubtokenbar"
 * `open UBTokenBar.xcworkspace` 
 * Run the `UBTokenBar-Example` scheme in Xcode. Run the `UBTokenBar_ExampleRTL` to test Right To Left langauge
 
+## Quickstart
+
+[See the UBTokenBar Quickstart here!](https://github.com/maxwellE/UBTokenBar/wiki/Quickstart)
+
 ## Authors
 
 * Maxwell Elliott (maxwelle@uber.com, [@maxwellE](https://github.com/maxwellE))
+
+## Screenshots
+
+### Default UBTokenBar
+
+![default](https://uber.box.com/shared/static/we2u789mbwsufkgust3ikcjejh66v0td.gif)
+
+### RTL UBTokenBar (Works out of the box!)
+
+![rlt](https://uber.box.com/shared/static/lzu8afq7km422ehbh013pv994fbg7xls.gif)
 
 ## Contributions
 
