@@ -12,8 +12,7 @@ If you have any questions, feel free to ask on [Stack Overflow](http://stackover
 ## Features
 
 - [x] Easy to get started
-- [x] Extensible architecture
-- [x] Swift-compatible
+- [x] Extensible, UICollectionView-based architecture
 - [x] Full RTL support
 
 ## Installation
@@ -30,7 +29,7 @@ pod 'UBTokenBar'
 
 #### Carthage
 
-To consume UBTokenBar using [Carthage](https://github.com/Carthage/Carthage) add this to your Cartfile:
+To integrate UBTokenBar using [Carthage](https://github.com/Carthage/Carthage) add this to your Cartfile:
 
 ```
 github "uber/ubtokenbar"
