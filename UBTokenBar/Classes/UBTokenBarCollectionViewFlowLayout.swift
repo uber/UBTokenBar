@@ -120,10 +120,6 @@ open class UBTokenBarCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
         var attributesCopy = [UICollectionViewLayoutAttributes]()
 
-        if let decorationLayoutAttributes = self.layoutAttributesForDecorationView(ofKind: searchIconDecorationCellType, at: IndexPath(item: 0, section: 0)) {
-            attributesCopy.append(decorationLayoutAttributes)
-        }
-
         if let inheritedLayoutAttributesForElementsInRect = super.layoutAttributesForElements(in: rect) {
             for layoutAttributesForItemsInRect in inheritedLayoutAttributesForElementsInRect {
                 if let layoutAttributesForItem = self.layoutAttributesForItem(at: layoutAttributesForItemsInRect.indexPath) {
@@ -134,11 +130,24 @@ open class UBTokenBarCollectionViewFlowLayout: UICollectionViewFlowLayout {
             }
         }
 
-        if let textInputFieldLayoutAttributes = attributesCopy.last {
-            textInputFieldLayoutAttributes.frame.size = CGSize(width: collectionView.bounds.size.width - textInputFieldLayoutAttributes.frame.minX - self.sectionInset.right, height: textInputFieldLayoutAttributes.size.height)
-            contentSize = CGSize(width: collectionView.bounds.width, height: textInputFieldLayoutAttributes.frame.maxY + self.sectionInset.bottom)
+        // Initial call to layoutAttributesForElements returned nothing, lets add our text field cell attributes in this case
+        if attributesCopy.count == 0 {
+            if let initialTextFieldLayoutAttributes = self.layoutAttributesForItem(at: IndexPath(item: 0, section: 0)) {
+                attributesCopy.append(initialTextFieldLayoutAttributes)
+            }
         }
 
+        if let textInputFieldLayoutAttributes = attributesCopy.last {
+            if textInputFieldLayoutAttributes.representedElementCategory == .cell {
+                textInputFieldLayoutAttributes.frame.size = CGSize(width: collectionView.bounds.size.width - textInputFieldLayoutAttributes.frame.minX - self.sectionInset.right, height: textInputFieldLayoutAttributes.size.height)
+                contentSize = CGSize(width: collectionView.bounds.width, height: textInputFieldLayoutAttributes.frame.maxY + self.sectionInset.bottom)
+            }
+        }
+
+        if let decorationLayoutAttributes = self.layoutAttributesForDecorationView(ofKind: searchIconDecorationCellType, at: IndexPath(item: 0, section: 0)) {
+            attributesCopy.append(decorationLayoutAttributes)
+        }
+        
         return attributesCopy
     }
 

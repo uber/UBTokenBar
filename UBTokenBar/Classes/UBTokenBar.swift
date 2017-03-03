@@ -88,11 +88,6 @@ open class UBTokenBar: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         fatalError("init(coder:) is not supported.")
     }
 
-    open override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        self.reloadTokenBar()
-    }
-
     open override func updateConstraints() {
         let leadingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         let trailingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
