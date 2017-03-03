@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/UBTokenBar.svg?style=flat)](http://cocoapods.org/pods/UBTokenBar)
 [![Platform](https://img.shields.io/cocoapods/p/UBTokenBar.svg?style=flat)](http://cocoapods.org/pods/UBTokenBar)
 
-UBTokenBar is a UICollectionView based token bar written in Swift. It uses UICollectionViewFlow layout objects to layout and render its tokens, which allows for a high level of layout customizability. Also since it is powered via a UICollectionView you can register your own cell classes to customize the token appearance and behavior. Right To Left language is supported out of the box!
+UBTokenBar is a UICollectionView based token bar written in Swift. It uses UICollectionViewFlow layout objects to layout and render its tokens, which allows for a high level of layout customizability. Since UBTokenBar is powered via a UICollectionView you can register your own cell classes to customize the token appearance and behavior. Right To Left language is supported out of the box!
 
 If you have any questions, feel free to ask on [Stack Overflow](http://stackoverflow.com/questions/tagged/ubtokenbar) (tag "ubtokenbar").
 
