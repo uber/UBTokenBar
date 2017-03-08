@@ -1,6 +1,6 @@
 # UBTokenBar
 
-[![CI Status](http://img.shields.io/travis/Maxwell Elliott/UBTokenBar.svg?style=flat)](https://travis-ci.org/Maxwell Elliott/UBTokenBar)
+[![CI Status](http://img.shields.io/travis/uber/UBTokenBar.svg?style=flat)](https://travis-ci.org/uber/UBTokenBar)
 [![Version](https://img.shields.io/cocoapods/v/UBTokenBar.svg?style=flat)](http://cocoapods.org/pods/UBTokenBar)
 [![License](https://img.shields.io/cocoapods/l/UBTokenBar.svg?style=flat)](http://cocoapods.org/pods/UBTokenBar)
 [![Platform](https://img.shields.io/cocoapods/p/UBTokenBar.svg?style=flat)](http://cocoapods.org/pods/UBTokenBar)
@@ -45,7 +45,7 @@ github "uber/ubtokenbar"
 
 ## Quickstart
 
-[See the UBTokenBar Quickstart here!](https://github.com/maxwellE/UBTokenBar/wiki/Quickstart)
+[See the UBTokenBar Quickstart here!](https://github.com/uber/UBTokenBar/wiki/Quickstart)
 
 ## Authors
 
