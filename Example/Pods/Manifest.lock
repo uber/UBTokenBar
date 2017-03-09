@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - UBTokenBar (0.1.0)
+  - UBTokenBar (1.0.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  UBTokenBar: b4bf7b3bea55c425b0dc1325eeb1dc7ecb52b98f
+  UBTokenBar: db009e8854db81e05927f5ebba14eb18de4c72a3
 
 PODFILE CHECKSUM: 69e170ff6c5328a239394b38f0e40184d0876a08
 
