@@ -1,6 +1,6 @@
 {
   "name": "UBTokenBar",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A powerful and extensible UICollectionView based token bar",
   "description": "UBTokenBar is a simple and easy to use token bar implementation for iOS. Based on the existing logic of UICollectionView and UICollectionViewFlow layout this token bar can be easily extended and customized for anyone with knowladge of UICollectionViews.",
   "homepage": "https://github.com/uber",
@@ -16,9 +16,10 @@
     "Maxwell Elliott": "maxwelle@uber.com"
   },
   "source": {
-    "git": "https://github.com/Maxwell Elliott/UBTokenBar.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/uber/UBTokenBar.git",
+    "tag": "1.0.0"
   },
+  "social_media_url": "https://twitter.com/UberEng",
   "platforms": {
     "ios": "10.0"
   },
