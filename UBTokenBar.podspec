@@ -8,13 +8,13 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UBTokenBar'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A powerful and extensible UICollectionView based token bar'
   s.description      = <<-DESC
   UBTokenBar is a simple and easy to use token bar implementation for iOS. Based on the existing logic of UICollectionView and UICollectionViewFlow layout this token bar can be easily extended and customized for anyone with knowladge of UICollectionViews.
                        DESC
 
-  s.homepage         = 'https://github.com/uber'
+  s.homepage         = 'https://github.com/uber/UBTokenBar'
   s.screenshots      = 'https://uber.box.com/shared/static/we2u789mbwsufkgust3ikcjejh66v0td.gif', 'https://uber.box.com/shared/static/lzu8afq7km422ehbh013pv994fbg7xls.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Maxwell Elliott' => 'maxwelle@uber.com' }
